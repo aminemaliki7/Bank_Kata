@@ -12,6 +12,6 @@ A simple bank account system in Java and Spring Boot with deposits, withdrawals,
 1. Clone the repository:  
    git clone https://github.com/aminemaliki7/Bank_Kata.git
    cd Bank_Kata
-2.Build and run tests:
+2. Build and run tests:
    mvn clean install
    mvn test
