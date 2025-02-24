@@ -31,19 +31,16 @@ public class Account {
 
         List<Transaction> transactions = transactionRepository.findAll();
 
-        // 🔹 Trier d'abord les transactions du plus ancien au plus récent pour calculer le solde correctement
         transactions.sort(Comparator.comparing(Transaction::getDate));
 
         int balance = 0;
         List<String> statementLines = new ArrayList<>();
 
-        // 🔹 Calcul du solde transaction par transaction
         for (Transaction transaction : transactions) {
             balance += transaction.getAmount();
             statementLines.add(transaction.getDate() + " | " + transaction.getAmount() + " | " + balance);
         }
 
-        // 🔹 Afficher dans l'ordre inverse (du plus récent au plus ancien)
         Collections.reverse(statementLines);
         for (String line : statementLines) {
             System.out.println(line);

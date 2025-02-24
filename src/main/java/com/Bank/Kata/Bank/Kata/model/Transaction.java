@@ -8,7 +8,6 @@ public class Transaction {
     private final LocalDate date;
     private final String type;
 
-    // 🔹 Constructeur pour définir une date spécifique
     public Transaction(int amount, String type, LocalDate date) {
         this.amount = amount;
         this.type = type;
